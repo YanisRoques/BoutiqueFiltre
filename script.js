@@ -56,6 +56,7 @@ fetch('https://fakestoreapi.com/products')
         price.textContent = product.price + "$";
 
         let button = document.createElement('button');
+        button.className = `buttonproduct`
         button.textContent = 'Acheter';
 
         card.appendChild(img);
@@ -66,7 +67,7 @@ fetch('https://fakestoreapi.com/products')
         div.appendChild(card);
     });
 
-    // Ici les écouteurs sur les boutons
+    //ajout du flitre par catégorie au clique
     let boutons = document.getElementsByClassName('buttonfilter');
     for (let i = 0; i < boutons.length; i++) {
         boutons[i].addEventListener('click', function () {

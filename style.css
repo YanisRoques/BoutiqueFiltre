@@ -53,6 +53,23 @@ header{
     background-color: #0d3054;
     scale: 1.2;
 }
+.buttonproduct{
+   font-family: "Roboto", sans-serif;
+   width: 30%;
+   height: 40%;
+   border-radius: 20px;
+   border: none;
+   background-color: #1e5794;
+   color: aliceblue;
+   padding: 10px;
+   font-size: 15px;
+   transition: 0.4s ease;
+   cursor: pointer;
+}
+.buttonproduct:hover{
+    background-color: #0d3054;
+    scale: 1.2;
+}
 #product-container{
     width: 100%;
     display: flex;
