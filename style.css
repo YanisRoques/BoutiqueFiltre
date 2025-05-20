@@ -58,6 +58,7 @@ header{
     scale: 1.2;
     color: #222222;
     font-size: 19px;
+    font-weight: bold;
 }
 .buttonproduct{
     text-align: center;
@@ -79,6 +80,7 @@ header{
     color: #222222;
     box-shadow: 1px 1px 10px gray;
     font-size: 18px;
+    font-weight: bold;
 }
 #product-container{
     width: 100%;
