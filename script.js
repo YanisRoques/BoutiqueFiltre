@@ -32,7 +32,7 @@
 let allProducts = [];
 
 //récuperation des infos produits dans l'API
-fetch('https://fakestoreapi.com/products')
+fetch(`test.json`)
     .then(response => response.json())
     .then(data => {
     let div = document.createElement('div');
@@ -58,6 +58,9 @@ fetch('https://fakestoreapi.com/products')
         let button = document.createElement('button');
         button.className = `buttonproduct`
         button.textContent = 'Acheter';
+        button.addEventListener(`click`, () => {
+            window.open(`https://longdogechallenge.com/`);
+        })
 
         card.appendChild(img);
         card.appendChild(title);
@@ -69,17 +72,18 @@ fetch('https://fakestoreapi.com/products')
 
     //ajout du flitre par catégorie au clique
     let boutons = document.getElementsByClassName('buttonfilter');
-    for (let i = 0; i < boutons.length; i++) {
-        boutons[i].addEventListener('click', function () {
-            let categorie = this.getAttribute('data-category');
-            let cartes = document.getElementsByClassName('product-card');
-            for (let j = 0; j < cartes.length; j++) {
-                if (cartes[j].getAttribute('data-category') === categorie) {
-                    cartes[j].style.display = "flex";
-                } else {
-                    cartes[j].style.display = "none";
-                }
-            }
+        Array.from(boutons).forEach(bouton => {
+            bouton.addEventListener('click', () => {
+                let categorie = bouton.getAttribute('data-category');
+                let cartes = document.getElementsByClassName('product-card');
+
+                Array.from(cartes).forEach(carte => {
+                    if (carte.getAttribute('data-category') === categorie || categorie === 'all') {
+                        carte.style.display = "flex";
+                    } else {
+                        carte.style.display = "none";
+                    }
+                });
+            });
         });
-    }
-})
+    });
