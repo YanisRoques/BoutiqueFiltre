@@ -31,7 +31,7 @@
 
 let allProducts = [];
 
-//récuperation des infos produits dans l'API
+//récuperation des infos produits dans le JSON
 fetch(`test.json`)
     .then(response => response.json())
     .then(data => {
