@@ -45,6 +45,8 @@ fetch(`test.json`)
         card.className = 'product-card';
         card.setAttribute('data-category', product.category);
 
+
+        
         let img = document.createElement('img');
         img.src = product.image;
         img.alt = product.title;
@@ -53,7 +55,7 @@ fetch(`test.json`)
         title.textContent = product.title;
 
         let price = document.createElement('p');
-        price.textContent = product.price + "$";
+        price.textContent =(`${product.price} €`);
 
         let button = document.createElement('button');
         button.className = `buttonproduct`
@@ -70,7 +72,7 @@ fetch(`test.json`)
         div.appendChild(card);
     });
 
-    //ajout du flitre par catégorie au clique
+    //ajout du flitre par catégorie
     let boutons = document.getElementsByClassName('buttonfilter');
         Array.from(boutons).forEach(bouton => {
             bouton.addEventListener('click', () => {
